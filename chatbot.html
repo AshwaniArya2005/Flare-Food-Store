@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Chatbot JavaScript</title>
+    <link rel="stylesheet" href="styles1.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: row;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .left-panel {
+            width: 50%;
+            padding: 20px;
+            background-color: #eb141474;
+            border-right: 1px solid #eb1414a4;
+        }
+        .right-panel {
+            width: 50%;
+            position: relative;
+        }
+        .right-panel h1{
+            font-size: 100px;
+            padding-top: 20%;
+            text-align: center;
+        }
+        .right-panel h2{
+            font-size: 50px;
+            padding-top: 15%;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table th, table td {
+            border: 1px solid #eb14147b;
+            padding: 10px;
+            text-align: left;
+        }
+        table th {
+            background-color: #eb141475;
+        }
+        .chat-input {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background: #f1f1f1;
+            position: sticky;
+            bottom: 0;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        #send-btn {
+            cursor: pointer;
+            color: #EB1414;
+        }
+    </style>
+</head>
+<body>
+    <!-- Left panel -->
+    <div class="left-panel">
+        <h2>Available Cities, Pincodes & Toll-Free Numbers</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>City</th>
+                    <th>Pincode</th>
+                    <th>Toll-Free Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Kashmir</td>
+                    <td>190001</td>
+                    <td>1800-123-001</td>
+                </tr>
+                <tr>
+                    <td>Mumbai</td>
+                    <td>400001</td>
+                    <td>1800-123-002</td>
+                </tr>
+                <tr>
+                    <td>Delhi</td>
+                    <td>110001</td>
+                    <td>1800-123-003</td>
+                </tr>
+                <tr>
+                    <td>Chennai</td>
+                    <td>600001</td>
+                    <td>1800-123-004</td>
+                </tr>
+                <tr>
+                    <td>Kolkata</td>
+                    <td>700001</td>
+                    <td>1800-123-005</td>
+                </tr>
+                <tr>
+                    <td>Bengaluru</td>
+                    <td>560001</td>
+                    <td>1800-123-006</td>
+                </tr>
+                <tr>
+                    <td>Hyderabad</td>
+                    <td>500001</td>
+                    <td>1800-123-007</td>
+                </tr>
+                <tr>
+                    <td>Ahmedabad</td>
+                    <td>380001</td>
+                    <td>1800-123-008</td>
+                </tr>
+                <tr>
+                    <td>Pune</td>
+                    <td>411001</td>
+                    <td>1800-123-009</td>
+                </tr>
+                <tr>
+                    <td>Jaipur</td>
+                    <td>302001</td>
+                    <td>1800-123-010</td>
+                </tr>
+                <tr>
+                    <td>Lucknow</td>
+                    <td>226001</td>
+                    <td>1800-123-011</td>
+                </tr>
+                <tr>
+                    <td>Bhopal</td>
+                    <td>462001</td>
+                    <td>1800-123-012</td>
+                </tr>
+                <tr>
+                    <td>Indore</td>
+                    <td>452001</td>
+                    <td>1800-123-013</td>
+                </tr>
+                <tr>
+                    <td>Surat</td>
+                    <td>395001</td>
+                    <td>1800-123-014</td>
+                </tr>
+                <tr>
+                    <td>Patna</td>
+                    <td>800001</td>
+                    <td>1800-123-015</td>
+                </tr>
+                <tr>
+                    <td>Agra</td>
+                    <td>282001</td>
+                    <td>1800-123-017</td>
+                </tr>
+                <tr>
+                    <td>Gurugram</td>
+                    <td>122001</td>
+                    <td>1800-123-018</td>
+                </tr>
+                <tr>
+                    <td>Vishakhapatnam</td>
+                    <td>530001</td>
+                    <td>1800-123-019</td>
+                </tr>
+                <tr>
+                    <td>Varanasi</td>
+                    <td>221001</td>
+                    <td>1800-123-020</td>
+                </tr>
+                <tr>
+                    <td>Coimbatore</td>
+                    <td>641001</td>
+                    <td>1800-123-021</td>
+                </tr>
+                <tr>
+                    <td>Madurai</td>
+                    <td>625001</td>
+                    <td>1800-123-022</td>
+                </tr>
+                <tr>
+                    <td>Ranchi</td>
+                    <td>834001</td>
+                    <td>1800-123-023</td>
+                </tr>
+                <tr>
+                    <td>Chandigarh</td>
+                    <td>160001</td>
+                    <td>1800-123-024</td>
+                </tr>
+                <tr>
+                    <td>Shimla</td>
+                    <td>171001</td>
+                    <td>1800-123-025</td>
+                </tr>
+                <tr>
+                    <td>Raipur</td>
+                    <td>492001</td>
+                    <td>1800-123-026</td>
+                </tr>                
+                <tr>
+                    <td>Kanpur</td>
+                    <td>208001</td>
+                    <td>1800-123-016</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Right panel -->
+    <div class="right-panel">
+        <h2>Get answers instantly with our</h2>
+        <h1>CHATBOT</h1>
+        <button class="chatbot-toggler">
+            <span class="material-symbols-outlined">mode_comment</span>
+            <span class="material-symbols-outlined">close</span>
+        </button>
+        <div class="chatbot">
+            <header>
+                <h2>Chatbot</h2>
+                <span class="close-btn material-symbols-outlined">close</span>
+            </header>
+            <ul class="chatbox">
+                <li class="chat incoming">
+                    <span class="material-symbols-outlined">smart_toy</span>
+                    <p>Hi👋<br>How can I help you today?</p>
+                </li>
+            </ul>
+            <div class="chat-input">
+                <textarea placeholder="Enter your message..." required></textarea>
+                <span id="send-btn" class="material-symbols-outlined">send</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
